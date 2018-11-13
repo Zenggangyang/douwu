@@ -4,12 +4,11 @@ import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.zhangyunfei.mylibrary.utils.ToastUtils;
+import butterknife.ButterKnife;
 
 
 /**
@@ -17,10 +16,12 @@ import com.zhangyunfei.mylibrary.utils.ToastUtils;
  * 创建时间：2018/7/19 10:48
  * 功能描述：
  */
-public abstract class BaseFragment extends Fragment implements BaseView{
+public abstract class BaseFragment<T extends IPresenter> extends Fragment{
 
     private Context mContext;
     protected boolean isViewVisible;//fragment是否可见
+
+    protected T mPresenter;
 
     /**
      * 用于设置页面布局
@@ -46,6 +47,11 @@ public abstract class BaseFragment extends Fragment implements BaseView{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View layout = inflater.inflate(getLayoutResId(), container, false);
+        ButterKnife.bind(this,layout);
+        if(mPresenter != null) {
+            //绑定Presenter
+            mPresenter.attachView(this, mContext);
+        }
         initialized(layout);
         return layout;
     }
@@ -74,21 +80,7 @@ public abstract class BaseFragment extends Fragment implements BaseView{
     }
 
     @Override
-    public void showLoading(String title) {
+    public void onDestroy() {
+        super.onDestroy();
     }
-
-    @Override
-    public void stopLoading() {
-    }
-
-    @Override
-    public void onComplete(String requestUrl, String jsonStr) {
-
-    }
-
-    @Override
-    public void onFailure(String msg) {
-        ToastUtils.showShort(msg, Gravity.CENTER);
-    }
-
 }

@@ -24,17 +24,21 @@ import com.zhangyunfei.mylibrary.utils.PermissionHelper;
 import com.zhangyunfei.mylibrary.utils.StatusBarHelper;
 import com.zhangyunfei.mylibrary.utils.ToastUtils;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 
 /**
  * 创建者：zhangyunfei
  * 创建时间：2018/7/18 14:10
  * 功能描述：
  */
-public abstract class BaseActivity extends AppCompatActivity implements NetEvent, BaseView {
+public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivity implements NetEvent {
 
     private FrameLayout content;
     public TextView rootText;
     protected Context mContext;
+    public T mPresenter;
 
     /**
      * 网络类型
@@ -52,6 +56,7 @@ public abstract class BaseActivity extends AppCompatActivity implements NetEvent
      */
     protected boolean changeStatusBar = true;
     private boolean isConfigChange = false;
+    private Unbinder mBind;
 
     public abstract int getLayoutId();
 
@@ -78,6 +83,7 @@ public abstract class BaseActivity extends AppCompatActivity implements NetEvent
         setContentView(R.layout.activity_base);
         //初始化控件
         initControls();
+        mBind = ButterKnife.bind(this);
         initView();
     }
 
@@ -90,6 +96,9 @@ public abstract class BaseActivity extends AppCompatActivity implements NetEvent
         View view = View.inflate(this, getLayoutId(), null);
         content.addView(view);
         content.addView(rootText);
+        if (mPresenter != null) {
+            mPresenter.attachView(this, this);
+        }
         if (LogUtils.isDebug) {
             rootText.setText(getClass().getName());
         } else {
@@ -146,6 +155,10 @@ public abstract class BaseActivity extends AppCompatActivity implements NetEvent
         if (!isConfigChange) {
             ActivityStack.getInstance().finishActivity();
         }
+        if (mPresenter != null) {
+            mPresenter.detachView();
+        }
+        mBind.unbind();
     }
 
     /**
@@ -186,24 +199,5 @@ public abstract class BaseActivity extends AppCompatActivity implements NetEvent
     @Override
     public void onNetChange(int netMobile) {
         this.netMobile = netMobile;
-    }
-
-
-    @Override
-    public void showLoading(String title) {
-    }
-
-    @Override
-    public void stopLoading() {
-    }
-
-    @Override
-    public void onComplete(String requestUrl, String jsonStr) {
-
-    }
-
-    @Override
-    public void onFailure(String msg) {
-
     }
 }
