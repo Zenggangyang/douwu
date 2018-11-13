@@ -50,7 +50,7 @@ public abstract class BaseActivity extends AppCompatActivity implements NetEvent
      * super.onCreate(savedInstanceState)之前设置为flase
      * 默认设置
      */
-    public boolean changeStatusBar = true;
+    protected boolean changeStatusBar = true;
     private boolean isConfigChange = false;
 
     public abstract int getLayoutId();
