@@ -71,7 +71,7 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
         super.onCreate(savedInstanceState);
         mContext=this;
         mApplication = BaseApplication.getApplication();
-        DenisityUtils.setCustomDensity(this, mApplication);
+        DenisityUtils.setCustomDensity(this, mApplication,375);
         inspectNet();
         mEvent = this;
         isConfigChange = false;

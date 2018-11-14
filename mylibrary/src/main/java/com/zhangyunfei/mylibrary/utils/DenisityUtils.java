@@ -18,7 +18,7 @@ public class DenisityUtils {
     private static float sNoncompatScaledDensity;
 
     //屏幕适配  在 Activity#onCreate 方法中调用
-    public static void setCustomDensity(Activity activity, final Application application) {
+    public static void setCustomDensity(Activity activity, final Application application,float picWidth) {
 
         //获取application的DisplayMetrics
         final DisplayMetrics appDisplayMetrics = application.getResources().getDisplayMetrics();
@@ -45,7 +45,7 @@ public class DenisityUtils {
             });
         }
 
-        final float targetDensity = appDisplayMetrics.widthPixels / (float)360;
+        final float targetDensity = appDisplayMetrics.widthPixels / picWidth;
         final float targetScaleDensity = targetDensity * (sNoncompatScaledDensity / sNoncompatDensity);
         final int targetDensityDpi = (int) (160 * targetDensity);
 
