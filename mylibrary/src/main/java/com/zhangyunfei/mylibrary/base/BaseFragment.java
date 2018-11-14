@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 
 /**
@@ -22,6 +23,8 @@ public abstract class BaseFragment<T extends IPresenter> extends Fragment{
     protected boolean isViewVisible;//fragment是否可见
 
     protected T mPresenter;
+
+    private Unbinder unbinder;
 
     /**
      * 用于设置页面布局
@@ -47,7 +50,7 @@ public abstract class BaseFragment<T extends IPresenter> extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View layout = inflater.inflate(getLayoutResId(), container, false);
-        ButterKnife.bind(this,layout);
+        unbinder=ButterKnife.bind(this,layout);
         if(mPresenter != null) {
             //绑定Presenter
             mPresenter.attachView(this, mContext);
@@ -80,7 +83,9 @@ public abstract class BaseFragment<T extends IPresenter> extends Fragment{
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
+
 }

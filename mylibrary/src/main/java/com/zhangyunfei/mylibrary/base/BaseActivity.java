@@ -92,7 +92,7 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
         content = findViewById(R.id.content);
         rootText = new TextView(this);
         rootText.setTextSize(20);
-        rootText.setTextColor(ContextCompat.getColor( this,R.color.txt_black));
+        rootText.setTextColor(ContextCompat.getColor( this,R.color.white));
         View view = View.inflate(this, getLayoutId(), null);
         content.addView(view);
         content.addView(rootText);
