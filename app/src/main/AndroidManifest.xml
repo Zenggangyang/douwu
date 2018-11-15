@@ -20,6 +20,8 @@
         <activity android:name=".ui.aty.mine.PublishVideoAty" />
         <activity android:name=".ui.aty.home.DanceOrgAty" />
         <activity android:name=".ui.aty.home.TeacherAty" />
+        <activity android:name=".ui.aty.home.CourseAty" />
+        <activity android:name=".ui.aty.home.CalendarAty" />
     </application>
 
 </manifest>

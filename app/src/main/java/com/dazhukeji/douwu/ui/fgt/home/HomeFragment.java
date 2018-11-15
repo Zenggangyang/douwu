@@ -13,6 +13,7 @@ import com.dazhukeji.douwu.api.OnItemClickListener;
 import com.dazhukeji.douwu.base.BaseFgt;
 import com.dazhukeji.douwu.loader.BannerLoader;
 import com.dazhukeji.douwu.manager.RecyclerViewManager;
+import com.dazhukeji.douwu.ui.aty.home.CourseAty;
 import com.dazhukeji.douwu.ui.aty.home.DanceOrgAty;
 import com.dazhukeji.douwu.ui.aty.home.TeacherAty;
 import com.youth.banner.Banner;
@@ -74,6 +75,7 @@ public class HomeFragment extends BaseFgt {
                         startActivity(TeacherAty.class);
                         break;
                     case 2:
+                        startActivity(CourseAty.class);
                         break;
                     case 3:
                         break;

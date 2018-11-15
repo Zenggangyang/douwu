@@ -11,7 +11,8 @@
     android:paddingStart="15dp">
 
     <LinearLayout
-        android:layout_width="294dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="30dp"
         android:alpha="0.5"
         android:background="@drawable/shape_radius5"
@@ -42,6 +43,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="搜索"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"
+        android:paddingStart="14dp"
+        android:paddingEnd="12dp"
         android:gravity="center"
         android:textColor="#ffdbdee7"
         android:textSize="13sp" />
