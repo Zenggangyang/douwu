@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dazhukeji.douwu.R;
+import com.dazhukeji.douwu.api.Constant;
+import com.dazhukeji.douwu.api.OnItemClickListener;
 import com.zhangyunfei.mylibrary.utils.DisplayHelper;
 
 import butterknife.BindView;
@@ -25,6 +27,11 @@ public class HomeClassifyAdapter extends RecyclerView.Adapter<HomeClassifyAdapte
 
 
     private Context mContext;
+    private OnItemClickListener mOnItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        mOnItemClickListener = onItemClickListener;
+    }
 
     @NonNull
     @Override
@@ -35,10 +42,19 @@ public class HomeClassifyAdapter extends RecyclerView.Adapter<HomeClassifyAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         RecyclerView.LayoutParams params=new RecyclerView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.width= DisplayHelper.getScreenWidth(mContext)/getItemCount();
         holder.classifyLayout.setLayoutParams(params);
+        holder.classifyTv.setText(Constant.CLASSIFY_TITLES[position]);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (null != mOnItemClickListener){
+                    mOnItemClickListener.onClickListener(holder.getLayoutPosition());
+                }
+            }
+        });
     }
 
     @Override

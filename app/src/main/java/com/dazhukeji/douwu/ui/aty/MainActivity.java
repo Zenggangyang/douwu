@@ -1,4 +1,4 @@
-package com.dazhukeji.douwu;
+package com.dazhukeji.douwu.ui.aty;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -7,6 +7,7 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 
+import com.dazhukeji.douwu.R;
 import com.dazhukeji.douwu.base.BaseAty;
 import com.dazhukeji.douwu.ui.fgt.follow.FollowFragment;
 import com.dazhukeji.douwu.ui.fgt.forum.ForumFragment;

@@ -4,14 +4,13 @@ apply plugin: 'com.android.library'
 version = "1.4.10"
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
 
     defaultConfig {
         minSdkVersion 11
-        targetSdkVersion 25
-        versionCode 41
-        versionName version
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
     }
     buildTypes {
         release {
@@ -22,12 +21,14 @@ android {
     lintOptions {
         abortOnError false
     }
+
+
 }
 
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    provided 'com.android.support:support-v4:+'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly 'com.android.support:support-v4:+'
 }
 
 configurations.all {

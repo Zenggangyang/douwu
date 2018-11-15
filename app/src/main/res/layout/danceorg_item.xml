@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="11dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginBottom="15dp">
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="精舞门Hip - Hop"
+        android:textColor="#ffced1da"
+        android:textSize="18sp"
+        />
+    <TextView
+        android:id="@+id/classify_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MV舞蹈  编舞  中国风"
+        android:layout_marginTop="9dp"
+        android:textColor="#ffced1da"
+        android:textSize="10sp"
+        />
+    <TextView
+        android:id="@+id/address_tv"
+        android:layout_marginTop="44dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KeeHow·天津 河西陆家店"
+        android:textColor="#ffced1da"
+        android:textSize="10sp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Base.Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="3" />
+
+        <TextView
+            android:id="@+id/score_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.0"
+            android:textColor="#ffced1da"
+            android:textSize="10sp" />
+    </LinearLayout>
+</LinearLayout>

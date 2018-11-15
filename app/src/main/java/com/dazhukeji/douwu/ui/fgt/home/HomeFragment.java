@@ -1,5 +1,6 @@
 package com.dazhukeji.douwu.ui.fgt.home;
 
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -8,9 +9,12 @@ import com.dazhukeji.douwu.adapter.HomeClassifyAdapter;
 import com.dazhukeji.douwu.adapter.TitlesAdapter;
 import com.dazhukeji.douwu.adapter.VideoAdpater;
 import com.dazhukeji.douwu.api.Constant;
+import com.dazhukeji.douwu.api.OnItemClickListener;
 import com.dazhukeji.douwu.base.BaseFgt;
 import com.dazhukeji.douwu.loader.BannerLoader;
 import com.dazhukeji.douwu.manager.RecyclerViewManager;
+import com.dazhukeji.douwu.ui.aty.home.DanceOrgAty;
+import com.dazhukeji.douwu.ui.aty.home.TeacherAty;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -37,6 +41,7 @@ public class HomeFragment extends BaseFgt {
     private List<String> titleList = new ArrayList<>();
     private RecyclerViewManager mRecyclerViewManager;
     private List<String> images;
+    private HomeClassifyAdapter mClassifyAdapter;
 
     @Override
     protected int getLayoutResId() {
@@ -54,7 +59,29 @@ public class HomeFragment extends BaseFgt {
 
         mRecyclerViewManager = new RecyclerViewManager(classifyRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.HORIZONTAL);
-        classifyRecyclerView.setAdapter(new HomeClassifyAdapter());
+        mClassifyAdapter = new HomeClassifyAdapter();
+        classifyRecyclerView.setAdapter(mClassifyAdapter);
+        mClassifyAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onClickListener(int position) {
+                Bundle bundle=new Bundle();
+                switch (position){
+                    case 0:
+                        bundle.putString("title",Constant.CLASSIFY_TITLES[position]);
+                        startActivity(DanceOrgAty.class,bundle);
+                        break;
+                    case 1:
+                        startActivity(TeacherAty.class);
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                }
+            }
+        });
 
         mRecyclerViewManager = new RecyclerViewManager(video_recyclerView);
         mRecyclerViewManager.setGridLayoutManager(2);

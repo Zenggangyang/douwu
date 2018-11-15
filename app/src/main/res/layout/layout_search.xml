@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingEnd="15dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingStart="15dp">
+
+    <LinearLayout
+        android:layout_width="294dp"
+        android:layout_height="30dp"
+        android:alpha="0.5"
+        android:background="@drawable/shape_radius5"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_marginStart="15dp"
+            android:src="@mipmap/ic_launcher" />
+        <EditText
+            android:id="@+id/search_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="店名、舞种、拼音"
+            android:layout_marginEnd="20dp"
+            android:textColorHint="#ff666666"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:textColor="#ff666666"
+            android:textSize="10sp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/search_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="搜索"
+        android:gravity="center"
+        android:textColor="#ffdbdee7"
+        android:textSize="13sp" />
+</LinearLayout>

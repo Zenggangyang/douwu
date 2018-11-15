@@ -40,4 +40,5 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
     implementation project(':citypicker')
     implementation project(':banner')
+    implementation project(':baserecyclerviewadapterhelper')
 }
