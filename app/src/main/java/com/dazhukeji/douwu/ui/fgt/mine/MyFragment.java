@@ -1,4 +1,4 @@
-package com.dazhukeji.douwu.ui.forum;
+package com.dazhukeji.douwu.ui.fgt.mine;
 
 import android.view.View;
 
@@ -10,10 +10,10 @@ import com.dazhukeji.douwu.base.BaseFgt;
  * 创建时间：2018/11/14 11:48
  * 功能描述：
  */
-public class ForumFragment extends BaseFgt {
+public class MyFragment extends BaseFgt {
     @Override
     protected int getLayoutResId() {
-        return R.layout.fragment_forum;
+        return R.layout.fragment_mine;
     }
 
     @Override

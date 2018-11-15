@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.fgt.home.HomeFragment">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -29,6 +29,7 @@
                     android:layout_height="match_parent" />
 
                 <include layout="@layout/layout_titles" />
+                <include layout="@layout/layout_home_search" />
             </FrameLayout>
 
             <android.support.v7.widget.RecyclerView
@@ -55,7 +56,11 @@
                     android:textColor="#ffe2e2e2"
                     android:textSize="16sp" />
             </RelativeLayout>
-
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/video_recyclerView"
+                android:overScrollMode="never"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

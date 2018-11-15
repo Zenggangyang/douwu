@@ -1,4 +1,4 @@
-package com.dazhukeji.douwu.ui.home;
+package com.dazhukeji.douwu.ui.fgt.home;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -6,6 +6,8 @@ import android.view.View;
 import com.dazhukeji.douwu.R;
 import com.dazhukeji.douwu.adapter.HomeClassifyAdapter;
 import com.dazhukeji.douwu.adapter.TitlesAdapter;
+import com.dazhukeji.douwu.adapter.VideoAdpater;
+import com.dazhukeji.douwu.api.Constant;
 import com.dazhukeji.douwu.base.BaseFgt;
 import com.dazhukeji.douwu.loader.BannerLoader;
 import com.dazhukeji.douwu.manager.RecyclerViewManager;
@@ -28,6 +30,9 @@ public class HomeFragment extends BaseFgt {
     Banner mBanner;
     @BindView(R.id.classify_recyclerView)
     RecyclerView classifyRecyclerView;
+    @BindView(R.id.video_recyclerView)
+    RecyclerView video_recyclerView;
+
 
     private List<String> titleList = new ArrayList<>();
     private RecyclerViewManager mRecyclerViewManager;
@@ -40,8 +45,8 @@ public class HomeFragment extends BaseFgt {
 
     @Override
     protected void initialized(View view) {
-        for (int i = 0; i < 8; i++) {
-            titleList.add("抖音舞" + (i + 1));
+        for (int i = 0; i < Constant.TITLES.length; i++) {
+            titleList.add(Constant.TITLES[i]);
         }
         mRecyclerViewManager = new RecyclerViewManager(titlesRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.HORIZONTAL);
@@ -50,6 +55,12 @@ public class HomeFragment extends BaseFgt {
         mRecyclerViewManager = new RecyclerViewManager(classifyRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.HORIZONTAL);
         classifyRecyclerView.setAdapter(new HomeClassifyAdapter());
+
+        mRecyclerViewManager = new RecyclerViewManager(video_recyclerView);
+        mRecyclerViewManager.setGridLayoutManager(2);
+        video_recyclerView.setNestedScrollingEnabled(false);
+        video_recyclerView.setAdapter(new VideoAdpater());
+
         images = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             images.add("http://e.hiphotos.baidu.com/image/pic/item/c83d70cf3bc79f3dd43c5964b7a1cd11738b2980.jpg");
@@ -74,7 +85,20 @@ public class HomeFragment extends BaseFgt {
 
     @Override
     protected void requestData() {
+    }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        //开始轮播
+        mBanner.startAutoPlay();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        //结束轮播
+        mBanner.stopAutoPlay();
     }
 
 }

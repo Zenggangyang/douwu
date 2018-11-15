@@ -1,1 +1,1 @@
-include ':app', ':mylibrary',":imagepicker",':citypicker'
+include ':app', ':mylibrary',":imagepicker",':citypicker',":banner"

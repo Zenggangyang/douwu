@@ -10,4 +10,5 @@ public class Constant {
 
     public static final String ISLOGIN = "isLogin";
     public static final String TOKEN = "token";
+    public static final String[] TITLES={"少儿舞蹈","抖音舞","伴舞","街舞","中国风","古典舞","拽步舞","肚皮舞"};
 }

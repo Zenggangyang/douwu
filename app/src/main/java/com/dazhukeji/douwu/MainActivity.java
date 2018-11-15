@@ -8,10 +8,10 @@ import android.view.KeyEvent;
 import android.view.View;
 
 import com.dazhukeji.douwu.base.BaseAty;
-import com.dazhukeji.douwu.ui.follow.FollowFragment;
-import com.dazhukeji.douwu.ui.forum.ForumFragment;
-import com.dazhukeji.douwu.ui.home.HomeFragment;
-import com.dazhukeji.douwu.ui.mine.MyFragment;
+import com.dazhukeji.douwu.ui.fgt.follow.FollowFragment;
+import com.dazhukeji.douwu.ui.fgt.forum.ForumFragment;
+import com.dazhukeji.douwu.ui.fgt.home.HomeFragment;
+import com.dazhukeji.douwu.ui.fgt.mine.MyFragment;
 import com.zhangyunfei.mylibrary.common.ActivityStack;
 
 
@@ -53,7 +53,6 @@ public class MainActivity extends BaseAty {
         FragmentTransaction mFragmentTransaction = mFragmentManager.beginTransaction();
 
         Fragment tagFragment = mFragmentManager.findFragmentByTag(tag);
-
         if (tagFragment == null) {
             mFragmentTransaction.add(R.id.fragment_container, fragment, tag);
         } else {
@@ -62,10 +61,9 @@ public class MainActivity extends BaseAty {
 
         tagFragment = mFragmentManager.findFragmentByTag(hideTag);
 
-        if (tagFragment != null) {
+        if (tagFragment != null && !tagFragment.equals(fragment)) {
             mFragmentTransaction.hide(tagFragment);
         }
-
         hideTag = tag;
         mFragmentTransaction.commit();
     }
