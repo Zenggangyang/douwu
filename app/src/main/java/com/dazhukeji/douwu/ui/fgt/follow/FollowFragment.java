@@ -8,7 +8,7 @@ import com.dazhukeji.douwu.base.BaseFgt;
 /**
  * 创建者：zhangyunfei
  * 创建时间：2018/11/14 11:47
- * 功能描述：
+ * 功能描述：关注
  */
 public class FollowFragment extends BaseFgt {
     @Override
