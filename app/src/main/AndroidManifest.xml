@@ -22,6 +22,8 @@
         <activity android:name=".ui.aty.home.TeacherAty" />
         <activity android:name=".ui.aty.home.CourseAty" />
         <activity android:name=".ui.aty.home.CalendarAty" />
+        <activity android:name=".ui.aty.home.RecruitHallAty" />
+        <activity android:name=".ui.aty.home.RecruitDetailsAty" />
     </application>
 
 </manifest>

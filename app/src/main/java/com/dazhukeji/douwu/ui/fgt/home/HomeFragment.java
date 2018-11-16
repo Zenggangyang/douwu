@@ -15,6 +15,7 @@ import com.dazhukeji.douwu.loader.BannerLoader;
 import com.dazhukeji.douwu.manager.RecyclerViewManager;
 import com.dazhukeji.douwu.ui.aty.home.CourseAty;
 import com.dazhukeji.douwu.ui.aty.home.DanceOrgAty;
+import com.dazhukeji.douwu.ui.aty.home.RecruitHallAty;
 import com.dazhukeji.douwu.ui.aty.home.TeacherAty;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -80,6 +81,7 @@ public class HomeFragment extends BaseFgt {
                     case 3:
                         break;
                     case 4:
+startActivity(RecruitHallAty.class);
                         break;
                 }
             }
