@@ -9,11 +9,11 @@ import java.util.List;
 
 /**
  * 创建者：zhangyunfei
- * 创建时间：2018/11/15 9:59
- * 功能描述：
+ * 时间：2018/11/19 0019
+ * 联系方式：32457127@qq.com
  */
-public class VideoAdpater extends BaseQuickAdapter<Object,BaseViewHolder>{
-    public VideoAdpater(int layoutResId, @Nullable List<Object> data) {
+public class VideoDetailsAdapter extends BaseQuickAdapter<Object,BaseViewHolder> {
+    public VideoDetailsAdapter(int layoutResId, @Nullable List<Object> data) {
         super(layoutResId, data);
     }
 

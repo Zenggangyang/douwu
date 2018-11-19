@@ -1,11 +1,14 @@
 package com.dazhukeji.douwu.ui.aty.home;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.dazhukeji.douwu.R;
 import com.dazhukeji.douwu.adapter.CourseAdapter;
 import com.dazhukeji.douwu.adapter.TitlesAdapter;
@@ -39,10 +42,14 @@ public class CourseAty extends BaseAty {
     TextView searchTv;
     @BindView(R.id.course_recyclerView)
     RecyclerView courseRecyclerView;
+    @BindView(R.id.info_frameLayout)
+    FrameLayout infoFrameLayout;
 
     private List<String> titleList = new ArrayList<>();
     private RecyclerViewManager mRecyclerViewManager;
-    private List<Object> mList=new ArrayList<>();
+    private List<Object> mList = new ArrayList<>();
+    private CourseAdapter mCourseAdapter;
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_course;
@@ -51,7 +58,8 @@ public class CourseAty extends BaseAty {
     @Override
     public void initView() {
         txtTitle.setText("课程列表");
-
+        searchContentTv.setHint("店名、舞种、拼音");
+        infoFrameLayout.setVisibility(View.VISIBLE);
         for (int i = 0; i < Constant.TITLES.length; i++) {
             titleList.add(Constant.TITLES[i]);
             mList.add(new Object());
@@ -62,7 +70,14 @@ public class CourseAty extends BaseAty {
 
         mRecyclerViewManager = new RecyclerViewManager(courseRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.VERTICAL);
-        courseRecyclerView.setAdapter(new CourseAdapter(R.layout.course_item,mList));
+        mCourseAdapter = new CourseAdapter(R.layout.course_item, mList);
+        courseRecyclerView.setAdapter(mCourseAdapter);
+        mCourseAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                startActivity(CourseDetailsAty.class);
+            }
+        });
     }
 
     @Override

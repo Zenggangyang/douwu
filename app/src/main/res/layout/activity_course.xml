@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:background="@color/bg_color"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <include layout="@layout/layout_bars"/>
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
 
-    <include layout="@layout/layout_titles"/>
+    <include layout="@layout/layout_bars" />
 
-    <include layout="@layout/layout_search"/>
+    <include layout="@layout/layout_titles" />
+
+    <include layout="@layout/layout_search" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/course_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/course_item"
-        tools:itemCount="3"/>
+        android:overScrollMode="never"
+        tools:itemCount="3"
+        tools:listitem="@layout/course_item" />
 
 </LinearLayout>

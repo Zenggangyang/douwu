@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.dazhukeji.douwu.R;
 import com.dazhukeji.douwu.adapter.HomeClassifyAdapter;
 import com.dazhukeji.douwu.adapter.TitlesAdapter;
@@ -28,6 +29,7 @@ import com.dazhukeji.douwu.ui.aty.home.NoticeDetailsAty;
 import com.dazhukeji.douwu.ui.aty.home.RecruitHallAty;
 import com.dazhukeji.douwu.ui.aty.home.TeacherAty;
 import com.dazhukeji.douwu.ui.aty.home.VideoAty;
+import com.dazhukeji.douwu.ui.aty.home.VideoDetailsAty;
 import com.dazhukeji.douwu.ui.aty.mine.PublishVideoAty;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -82,6 +84,8 @@ public class HomeFragment extends BaseFgt {
     private HomeClassifyAdapter mClassifyAdapter;
 
     private PopupWindow mPopupWindow;
+    private VideoAdpater mVideoAdpater;
+    private List<Object> mList;
 
 
     @Override
@@ -130,8 +134,18 @@ public class HomeFragment extends BaseFgt {
         mRecyclerViewManager = new RecyclerViewManager(video_recyclerView);
         mRecyclerViewManager.setGridLayoutManager(2);
         video_recyclerView.setNestedScrollingEnabled(false);
-        video_recyclerView.setAdapter(new VideoAdpater());
-
+        mList=new ArrayList<>();
+        for (int i = 0; i < 8; i++) {
+            mList.add(new Object());
+        }
+        mVideoAdpater = new VideoAdpater(R.layout.video_item,mList);
+        video_recyclerView.setAdapter(mVideoAdpater);
+        mVideoAdpater.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                startActivity(VideoDetailsAty.class);
+            }
+        });
         images = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             //            images.add("http://e.hiphotos.baidu.com/image/pic/item/c83d70cf3bc79f3dd43c5964b7a1cd11738b2980.jpg");

@@ -10,6 +10,7 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.dazhukeji.douwu.R;
 import com.dazhukeji.douwu.adapter.TitlesAdapter;
 import com.dazhukeji.douwu.adapter.VideoAdpater;
@@ -52,6 +53,8 @@ public class VideoAty extends BaseAty {
     private PopupWindow mVideoPopupWindow;
     private RecyclerViewManager mRecyclerViewManager;
     private List<String> mTitleList=new ArrayList<>();
+    private VideoAdpater mVideoAdpater;
+    private List<Object> mList;
 
     @Override
     public int getLayoutId() {
@@ -78,7 +81,19 @@ public class VideoAty extends BaseAty {
         mRecyclerViewManager = new RecyclerViewManager(videoRecyclerView);
         mRecyclerViewManager.setGridLayoutManager(2);
         videoRecyclerView.setNestedScrollingEnabled(false);
-        videoRecyclerView.setAdapter(new VideoAdpater());
+        mList=new ArrayList<>();
+        for (int i = 0; i < 8; i++) {
+            mList.add(new Object());
+        }
+        mVideoAdpater = new VideoAdpater(R.layout.video_item,mList);
+        videoRecyclerView.setAdapter(mVideoAdpater);
+        mVideoAdpater.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                startActivity(VideoDetailsAty.class);
+            }
+        });
+
     }
 
     @Override
