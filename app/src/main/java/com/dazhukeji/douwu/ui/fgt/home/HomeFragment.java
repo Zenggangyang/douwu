@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -23,8 +24,11 @@ import com.dazhukeji.douwu.loader.BannerLoader;
 import com.dazhukeji.douwu.manager.RecyclerViewManager;
 import com.dazhukeji.douwu.ui.aty.home.CourseAty;
 import com.dazhukeji.douwu.ui.aty.home.DanceOrgAty;
+import com.dazhukeji.douwu.ui.aty.home.NoticeDetailsAty;
 import com.dazhukeji.douwu.ui.aty.home.RecruitHallAty;
 import com.dazhukeji.douwu.ui.aty.home.TeacherAty;
+import com.dazhukeji.douwu.ui.aty.home.VideoAty;
+import com.dazhukeji.douwu.ui.aty.mine.PublishVideoAty;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -60,11 +64,21 @@ public class HomeFragment extends BaseFgt {
     RelativeLayout popRelativeLayout;
     @BindView(R.id.location_tv)
     TextView locationTv;
+    @BindView(R.id.notice_img)
+    ImageView noticeImg;
+    @BindView(R.id.video_img)
+    ImageView videoImg;
+    @BindView(R.id.pic_img)
+    ImageView picImg;
+    @BindView(R.id.lewu_img)
+    ImageView lewuImg;
+    @BindView(R.id.music_img)
+    ImageView musicImg;
 
 
     private List<String> titleList = new ArrayList<>();
     private RecyclerViewManager mRecyclerViewManager;
-    private List<String> images;
+    private List<Integer> images;
     private HomeClassifyAdapter mClassifyAdapter;
 
     private PopupWindow mPopupWindow;
@@ -104,6 +118,7 @@ public class HomeFragment extends BaseFgt {
                         startActivity(CourseAty.class);
                         break;
                     case 3:
+                        startActivity(VideoAty.class);
                         break;
                     case 4:
                         startActivity(RecruitHallAty.class);
@@ -119,7 +134,8 @@ public class HomeFragment extends BaseFgt {
 
         images = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
-            images.add("http://e.hiphotos.baidu.com/image/pic/item/c83d70cf3bc79f3dd43c5964b7a1cd11738b2980.jpg");
+            //            images.add("http://e.hiphotos.baidu.com/image/pic/item/c83d70cf3bc79f3dd43c5964b7a1cd11738b2980.jpg");
+            images.add(R.drawable.icon_douwu_bg);
         }
         //设置banner样式
         mBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
@@ -157,7 +173,7 @@ public class HomeFragment extends BaseFgt {
         mBanner.stopAutoPlay();
     }
 
-    @OnClick({R.id.location_tv, R.id.pop_relativeLayout})
+    @OnClick({R.id.location_tv, R.id.pop_relativeLayout, R.id.notice_img,R.id.video_img, R.id.pic_img, R.id.lewu_img, R.id.music_img})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.location_tv:
@@ -166,6 +182,36 @@ public class HomeFragment extends BaseFgt {
             case R.id.pop_relativeLayout:
                 setPop();
                 break;
+            case R.id.notice_img:
+                startActivity(NoticeDetailsAty.class);
+                break;
+            case R.id.video_img:
+                setPic();
+                startActivity(PublishVideoAty.class);
+                break;
+            case R.id.pic_img:
+                setPic();
+                startActivity(PublishVideoAty.class);
+                break;
+            case R.id.lewu_img:
+                setPic();
+                break;
+            case R.id.music_img:
+                setPic();
+                startActivity(PublishVideoAty.class);
+                break;
+        }
+    }
+
+    private void setPic() {
+        if (videoImg.getVisibility()== View.VISIBLE){
+            videoImg.setVisibility(View.GONE);
+            picImg.setVisibility(View.GONE);
+            musicImg.setVisibility(View.GONE);
+        }else {
+            videoImg.setVisibility(View.VISIBLE);
+            picImg.setVisibility(View.VISIBLE);
+            musicImg.setVisibility(View.VISIBLE);
         }
     }
 
@@ -249,6 +295,5 @@ public class HomeFragment extends BaseFgt {
             }
         }
     }
-
 
 }

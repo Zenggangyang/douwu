@@ -1,7 +1,11 @@
 package com.dazhukeji.douwu.ui.aty.mine;
 
+import android.widget.TextView;
+
 import com.dazhukeji.douwu.R;
 import com.dazhukeji.douwu.base.BaseAty;
+
+import butterknife.BindView;
 
 /**
  * 创建者：zhangyunfei
@@ -9,6 +13,9 @@ import com.dazhukeji.douwu.base.BaseAty;
  * 功能描述：发布视频
  */
 public class PublishVideoAty extends BaseAty {
+    @BindView(R.id.txt_title)
+    TextView txtTitle;
+
     @Override
     public int getLayoutId() {
         return R.layout.layout_publish_video;
@@ -16,11 +23,12 @@ public class PublishVideoAty extends BaseAty {
 
     @Override
     public void initView() {
-
+        txtTitle.setText("发布视频");
     }
 
     @Override
     public void initData() {
 
     }
+
 }

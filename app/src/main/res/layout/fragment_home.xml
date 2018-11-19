@@ -40,6 +40,7 @@
                 android:overScrollMode="never" />
 
             <ImageView
+                android:id="@+id/notice_img"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:src="@drawable/icon_show" />
@@ -99,5 +100,11 @@
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+    <include layout="@layout/layout_release"
+        android:layout_gravity="end|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="20dp"/>
 
 </FrameLayout>
