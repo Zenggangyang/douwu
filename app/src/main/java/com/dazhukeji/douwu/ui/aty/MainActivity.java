@@ -1,8 +1,8 @@
 package com.dazhukeji.douwu.ui.aty;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -50,7 +50,7 @@ public class MainActivity extends BaseAty {
      * 选择不同的fragment
      */
     private void switchFragment(Fragment fragment, String tag) {
-        FragmentManager mFragmentManager = getFragmentManager();
+        FragmentManager mFragmentManager = getSupportFragmentManager();
         FragmentTransaction mFragmentTransaction = mFragmentManager.beginTransaction();
 
         Fragment tagFragment = mFragmentManager.findFragmentByTag(tag);

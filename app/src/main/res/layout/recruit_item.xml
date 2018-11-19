@@ -16,7 +16,7 @@
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/icon_zhaopin"
         />
     <LinearLayout
         android:layout_marginStart="14dp"
@@ -64,7 +64,7 @@
         android:textColor="#ffdbdee7"
         android:textSize="15sp"
         android:drawablePadding="8dp"
-        android:drawableEnd="@drawable/ic_arrow_back"
+        android:drawableEnd="@drawable/icon_right_arrow"
         />
 
 </LinearLayout>

@@ -117,6 +117,10 @@
                 android:text="街舞"
                 android:textColor="#ffdbdee7"
                 android:textSize="11sp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="6dp"
                 />
             <TextView
                 android:layout_marginStart="7dp"
@@ -125,6 +129,10 @@
                 android:text="编舞"
                 android:textColor="#ffdbdee7"
                 android:textSize="11sp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="6dp"
                 />
             <TextView
                 android:layout_marginStart="7dp"
@@ -133,6 +141,10 @@
                 android:text="中国风"
                 android:textColor="#ffdbdee7"
                 android:textSize="11sp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="6dp"
                 />
             <TextView
                 android:layout_marginStart="7dp"
@@ -141,6 +153,10 @@
                 android:text="肚皮舞"
                 android:textColor="#ffdbdee7"
                 android:textSize="11sp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="6dp"
                 />
 
         </LinearLayout>
@@ -157,6 +173,10 @@
                 android:text="古典舞"
                 android:textColor="#ffdbdee7"
                 android:textSize="11sp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="6dp"
                 />
             <TextView
                 android:layout_marginStart="7dp"
@@ -165,6 +185,10 @@
                 android:text="拽步舞"
                 android:textColor="#ffdbdee7"
                 android:textSize="11sp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="6dp"
                 />
             <TextView
                 android:layout_marginStart="7dp"
@@ -173,6 +197,10 @@
                 android:text="儿童舞蹈"
                 android:textColor="#ffdbdee7"
                 android:textSize="11sp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="6dp"
                 />
         </LinearLayout>
 

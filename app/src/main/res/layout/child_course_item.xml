@@ -47,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:padding="3dp"
                 android:text="难度"
+                android:background="@drawable/icon_difficulty_bg"
                 android:textColor="#ffdbdee7"
                 android:textSize="9sp" />
 
@@ -69,6 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="预约"
+        android:background="@drawable/icon_yuyue_bg"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:paddingTop="8dp"

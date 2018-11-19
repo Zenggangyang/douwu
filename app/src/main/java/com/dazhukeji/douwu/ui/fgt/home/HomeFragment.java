@@ -1,8 +1,16 @@
 package com.dazhukeji.douwu.ui.fgt.home;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dazhukeji.douwu.R;
 import com.dazhukeji.douwu.adapter.HomeClassifyAdapter;
@@ -20,11 +28,19 @@ import com.dazhukeji.douwu.ui.aty.home.TeacherAty;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
+import com.zaaach.citypicker.CityPicker;
+import com.zaaach.citypicker.adapter.OnPickListener;
+import com.zaaach.citypicker.model.City;
+import com.zaaach.citypicker.model.HotCity;
+import com.zaaach.citypicker.model.LocateState;
+import com.zaaach.citypicker.model.LocatedCity;
+import com.zhangyunfei.mylibrary.utils.DisplayHelper;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * 首页
@@ -38,12 +54,21 @@ public class HomeFragment extends BaseFgt {
     RecyclerView classifyRecyclerView;
     @BindView(R.id.video_recyclerView)
     RecyclerView video_recyclerView;
+    @BindView(R.id.select_tv)
+    TextView selectTv;
+    @BindView(R.id.pop_relativeLayout)
+    RelativeLayout popRelativeLayout;
+    @BindView(R.id.location_tv)
+    TextView locationTv;
 
 
     private List<String> titleList = new ArrayList<>();
     private RecyclerViewManager mRecyclerViewManager;
     private List<String> images;
     private HomeClassifyAdapter mClassifyAdapter;
+
+    private PopupWindow mPopupWindow;
+
 
     @Override
     protected int getLayoutResId() {
@@ -66,11 +91,11 @@ public class HomeFragment extends BaseFgt {
         mClassifyAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onClickListener(int position) {
-                Bundle bundle=new Bundle();
-                switch (position){
+                Bundle bundle = new Bundle();
+                switch (position) {
                     case 0:
-                        bundle.putString("title",Constant.CLASSIFY_TITLES[position]);
-                        startActivity(DanceOrgAty.class,bundle);
+                        bundle.putString("title", Constant.CLASSIFY_TITLES[position]);
+                        startActivity(DanceOrgAty.class, bundle);
                         break;
                     case 1:
                         startActivity(TeacherAty.class);
@@ -81,7 +106,7 @@ public class HomeFragment extends BaseFgt {
                     case 3:
                         break;
                     case 4:
-startActivity(RecruitHallAty.class);
+                        startActivity(RecruitHallAty.class);
                         break;
                 }
             }
@@ -131,5 +156,99 @@ startActivity(RecruitHallAty.class);
         //结束轮播
         mBanner.stopAutoPlay();
     }
+
+    @OnClick({R.id.location_tv, R.id.pop_relativeLayout})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.location_tv:
+                setCity();
+                break;
+            case R.id.pop_relativeLayout:
+                setPop();
+                break;
+        }
+    }
+
+    private void setCity() {
+        List<HotCity> hotCities = new ArrayList<>();
+        hotCities.add(new HotCity("北京", "北京", "101010100"));
+        hotCities.add(new HotCity("上海", "上海", "101020100"));
+        hotCities.add(new HotCity("广州", "广东", "101280101"));
+        hotCities.add(new HotCity("深圳", "广东", "101280601"));
+        hotCities.add(new HotCity("杭州", "浙江", "101210101"));
+
+        CityPicker.getInstance()
+                .setFragmentManager(getFragmentManager())    //此方法必须调用
+                .enableAnimation(true)    //启用动画效果
+                .setAnimationStyle(R.style.DefaultCityPickerAnimation)    //自定义动画
+                .setLocatedCity(new LocatedCity("杭州", "浙江", "101210101"))  //APP自身已定位的城市，默认为null（定位失败）
+                .setHotCities(hotCities)    //指定热门城市
+                .setOnPickListener(new OnPickListener() {
+                    @Override
+                    public void onPick(int position, City data) {
+                        Toast.makeText(mContext, data.getName(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onLocate() {
+                        //开始定位，这里模拟一下定位
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                //定位完成之后更新数据
+                                CityPicker.getInstance()
+                                        .locateComplete(new LocatedCity("深圳", "广东", "101280601"), LocateState.SUCCESS);
+                            }
+                        }, 2000);
+                    }
+                })
+                .show();
+    }
+
+    private void setPop() {
+        if (null == mPopupWindow) {
+            View view = LayoutInflater.from(mContext).inflate(R.layout.layout_pop, null);
+            TextView timeTv = view.findViewById(R.id.time_tv);
+            TextView collecTv = view.findViewById(R.id.collect_tv);
+            mPopupWindow = new PopupWindow(view, DisplayHelper.dp2px(mContext, 100),
+                    ViewGroup.LayoutParams.WRAP_CONTENT);
+            mPopupWindow.setBackgroundDrawable(null);
+            mPopupWindow.setOutsideTouchable(false);
+            mPopupWindow.showAsDropDown(popRelativeLayout);
+            timeTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Drawable drawableLeft = getResources().getDrawable(
+                            R.drawable.icon_time);
+
+                    selectTv.setCompoundDrawablesWithIntrinsicBounds(drawableLeft,
+                            null, null, null);
+                    selectTv.setCompoundDrawablePadding(2);
+                    selectTv.setText("时间");
+                    mPopupWindow.dismiss();
+                }
+            });
+            collecTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Drawable drawableLeft = getResources().getDrawable(
+                            R.drawable.icon_star);
+
+                    selectTv.setCompoundDrawablesWithIntrinsicBounds(drawableLeft,
+                            null, null, null);
+                    selectTv.setCompoundDrawablePadding(2);
+                    selectTv.setText("收藏度");
+                    mPopupWindow.dismiss();
+                }
+            });
+        } else {
+            if (mPopupWindow.isShowing()) {
+                mPopupWindow.dismiss();
+            } else {
+                mPopupWindow.showAsDropDown(popRelativeLayout);
+            }
+        }
+    }
+
 
 }

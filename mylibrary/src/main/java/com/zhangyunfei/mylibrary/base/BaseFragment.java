@@ -1,9 +1,9 @@
 package com.zhangyunfei.mylibrary.base;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +17,9 @@ import butterknife.Unbinder;
  * 创建时间：2018/7/19 10:48
  * 功能描述：
  */
-public abstract class BaseFragment<T extends IPresenter> extends Fragment{
+public abstract class BaseFragment<T extends IPresenter> extends Fragment {
 
-    private Context mContext;
+    protected Context mContext;
     protected boolean isViewVisible;//fragment是否可见
 
     protected T mPresenter;

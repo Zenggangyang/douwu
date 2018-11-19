@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
@@ -8,7 +9,7 @@
     android:paddingEnd="7dp"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
-    android:background="@color/bg_color"
+    android:background="@drawable/icon_teacher_bg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <ImageView
@@ -46,14 +47,23 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <RatingBar
+
+            <com.dazhukeji.douwu.view.RatingBar
                 android:id="@+id/ratingBar"
-                style="@style/Base.Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:isIndicator="false"
+                android:layout_gravity="center_vertical"
+                android:clickable="false"
+                android:gravity="center"
                 android:numStars="5"
-                android:rating="3" />
+                app:starFill="@drawable/icon_select_star"
+                app:starHalf="@drawable/icon_unselect_star"
+                app:starImageSize="12dp"
+                app:starStep="3"
+                app:starcount="5"
+                app:starempty="@drawable/icon_unselect_star"
+                app:starpadding="5dp"
+                app:stepSize="Full"/>
 
             <TextView
                 android:id="@+id/score_tv"

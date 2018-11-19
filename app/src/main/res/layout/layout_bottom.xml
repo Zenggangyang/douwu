@@ -33,7 +33,7 @@
                     android:layout_centerHorizontal="true"
                     android:focusable="false"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/icon_home" />
 
                 <TextView
                     android:id="@+id/tv_home"
@@ -66,7 +66,7 @@
                     android:layout_centerHorizontal="true"
                     android:focusable="false"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/icon_forum" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -98,7 +98,7 @@
                     android:layout_centerHorizontal="true"
                     android:focusable="false"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/icon_follow" />
 
                 <TextView
                     android:id="@+id/tv_follow"
@@ -131,7 +131,7 @@
                     android:layout_centerHorizontal="true"
                     android:focusable="false"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/icon_mine" />
 
                 <TextView
                     android:id="@+id/tv_mine"

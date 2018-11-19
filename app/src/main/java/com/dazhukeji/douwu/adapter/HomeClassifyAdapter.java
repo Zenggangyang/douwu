@@ -47,6 +47,7 @@ public class HomeClassifyAdapter extends RecyclerView.Adapter<HomeClassifyAdapte
         params.width= DisplayHelper.getScreenWidth(mContext)/getItemCount();
         holder.classifyLayout.setLayoutParams(params);
         holder.classifyTv.setText(Constant.CLASSIFY_TITLES[position]);
+        holder.classifyImg.setImageResource(Constant.CLASSIFY_ICONS[position]);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +60,7 @@ public class HomeClassifyAdapter extends RecyclerView.Adapter<HomeClassifyAdapte
 
     @Override
     public int getItemCount() {
-        return 5;
+        return Constant.CLASSIFY_TITLES.length;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

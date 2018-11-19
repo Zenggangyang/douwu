@@ -23,7 +23,7 @@
             android:layout_width="9dp"
             android:layout_height="9dp"
             android:layout_marginStart="15dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/icon_search" />
         <EditText
             android:id="@+id/search_content_tv"
             android:layout_width="match_parent"
@@ -43,8 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="搜索"
-        android:paddingTop="9dp"
-        android:paddingBottom="9dp"
+        android:background="@drawable/icon_search_bg"
         android:paddingStart="14dp"
         android:paddingEnd="12dp"
         android:gravity="center"
