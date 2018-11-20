@@ -41,4 +41,5 @@ dependencies {
     implementation project(':citypicker')
     implementation project(':banner')
     implementation project(':baserecyclerviewadapterhelper')
+    implementation project(':jiaozivideoplayer')
 }

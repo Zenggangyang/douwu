@@ -1,1 +1,1 @@
-include ':app', ':mylibrary',":imagepicker",':citypicker',":banner",":baserecyclerviewadapterhelper"
+include ':app', ':mylibrary',":imagepicker",':citypicker',":banner",":baserecyclerviewadapterhelper",":jiaozivideoplayer"
