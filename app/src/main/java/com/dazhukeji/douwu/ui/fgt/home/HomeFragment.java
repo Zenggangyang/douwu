@@ -86,6 +86,7 @@ public class HomeFragment extends BaseFgt {
     private PopupWindow mPopupWindow;
     private VideoAdpater mVideoAdpater;
     private List<Object> mList;
+    private TitlesAdapter mTitlesAdapter;
 
 
     @Override
@@ -100,7 +101,14 @@ public class HomeFragment extends BaseFgt {
         }
         mRecyclerViewManager = new RecyclerViewManager(titlesRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.HORIZONTAL);
-        titlesRecyclerView.setAdapter(new TitlesAdapter(titleList));
+        mTitlesAdapter = new TitlesAdapter(R.layout.home_title_item, titleList);
+        titlesRecyclerView.setAdapter(mTitlesAdapter);
+        mTitlesAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                mTitlesAdapter.setSelectPosition(position);
+            }
+        });
 
         mRecyclerViewManager = new RecyclerViewManager(classifyRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.HORIZONTAL);

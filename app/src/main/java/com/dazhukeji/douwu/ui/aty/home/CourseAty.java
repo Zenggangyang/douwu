@@ -66,7 +66,7 @@ public class CourseAty extends BaseAty {
         }
         mRecyclerViewManager = new RecyclerViewManager(titlesRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.HORIZONTAL);
-        titlesRecyclerView.setAdapter(new TitlesAdapter(titleList));
+        titlesRecyclerView.setAdapter(new TitlesAdapter(R.layout.home_title_item,titleList));
 
         mRecyclerViewManager = new RecyclerViewManager(courseRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.VERTICAL);

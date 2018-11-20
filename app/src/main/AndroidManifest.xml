@@ -28,6 +28,8 @@
         <activity android:name=".ui.aty.home.VideoAty" />
         <activity android:name=".ui.aty.home.VideoDetailsAty" />
         <activity android:name=".ui.aty.home.CourseDetailsAty" />
+        <activity android:name=".ui.aty.home.DanceOrgDetailsAty" />
+        <activity android:name=".ui.aty.home.MechanismVideoAty" />
     </application>
 
 </manifest>

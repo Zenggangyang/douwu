@@ -93,7 +93,7 @@ public class FollowFragment extends BaseFgt {
             followRecyclerView.setAdapter(new CourseAdapter(R.layout.course_item,mList));
         } else if (2 == position) {
             courseTv.setBackgroundResource(R.drawable.ic_arrow_back);
-            followRecyclerView.setAdapter(new DanceOrgAdapter());
+            followRecyclerView.setAdapter(new DanceOrgAdapter(R.layout.danceorg_item, mList));
         }
 
     }

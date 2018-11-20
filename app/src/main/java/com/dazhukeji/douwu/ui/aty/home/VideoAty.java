@@ -55,6 +55,7 @@ public class VideoAty extends BaseAty {
     private List<String> mTitleList=new ArrayList<>();
     private VideoAdpater mVideoAdpater;
     private List<Object> mList;
+    private TitlesAdapter mTitlesAdapter;
 
     @Override
     public int getLayoutId() {
@@ -76,7 +77,14 @@ public class VideoAty extends BaseAty {
         }
         mRecyclerViewManager = new RecyclerViewManager(titlesRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.HORIZONTAL);
-        titlesRecyclerView.setAdapter(new TitlesAdapter(mTitleList));
+        mTitlesAdapter = new TitlesAdapter(R.layout.home_title_item, mTitleList);
+        titlesRecyclerView.setAdapter(mTitlesAdapter);
+        mTitlesAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+
+            }
+        });
 
         mRecyclerViewManager = new RecyclerViewManager(videoRecyclerView);
         mRecyclerViewManager.setGridLayoutManager(2);
