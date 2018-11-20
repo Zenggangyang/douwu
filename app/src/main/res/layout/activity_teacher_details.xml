@@ -33,12 +33,26 @@
                     android:gravity="center_horizontal"
                     android:orientation="vertical">
 
-                    <ImageView
+                    <FrameLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:maxHeight="86dp"
-                        android:maxWidth="114dp"
-                        android:src="@drawable/icon_logo" />
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxHeight="67dp"
+                            android:maxWidth="67dp"
+                            android:src="@mipmap/ic_launcher" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|end"
+                            android:maxHeight="20dp"
+                            android:maxWidth="20dp"
+                            android:src="@drawable/icon_mine_people" />
+                    </FrameLayout>
+
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -60,7 +74,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="营业时间：早上 09:00 - 下午18:00"
+                        android:text="上课时间：早上 09:00 - 下午18:00"
                         android:textColor="#ffced1da"
                         android:textSize="10sp" />
 
@@ -68,7 +82,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="客服电话：022-15682141568"
+                        android:text="联系电话：022-15682141568"
                         android:textColor="#ffced1da"
                         android:textSize="10sp" />
 
@@ -76,15 +90,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="门店地址：AIJ·天津 南开森淼店 教学基地"
-                        android:textColor="#ffced1da"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="舞种类型：MV舞蹈 编舞 中国风"
+                        android:text="联系地址：AIJ·天津 南开森淼大街"
                         android:textColor="#ffced1da"
                         android:textSize="10sp" />
 
@@ -105,49 +111,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
-                            android:drawablePadding="5dp"
-                            android:drawableStart="@drawable/icon_unselect_choice"
-                            android:text="WIFI"
-                            android:textColor="#ffced1da"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="36dp"
-                            android:drawablePadding="5dp"
-                            android:drawableStart="@drawable/icon_unselect_choice"
-                            android:text="停车位"
+                            android:text="MV舞蹈 编舞 中国风 古典舞"
                             android:textColor="#ffced1da"
                             android:textSize="10sp" />
                     </LinearLayout>
 
-                    <LinearLayout
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="51dp"
                         android:layout_marginTop="10dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="53dp"
-                            android:drawablePadding="5dp"
-                            android:drawableStart="@drawable/icon_unselect_choice"
-                            android:text="微信支付"
-                            android:textColor="#ffced1da"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="18dp"
-                            android:drawablePadding="5dp"
-                            android:drawableStart="@drawable/icon_unselect_choice"
-                            android:text="支付宝支付"
-                            android:textColor="#ffced1da"
-                            android:textSize="10sp" />
-                    </LinearLayout>
+                        android:text="MV舞蹈 编舞 中国风 古典舞"
+                        android:textColor="#ffced1da"
+                        android:textSize="10sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -158,7 +134,7 @@
                         android:paddingEnd="6dp"
                         android:paddingStart="6dp"
                         android:paddingTop="2dp"
-                        android:text="取消关注"
+                        android:text="关注老师"
                         android:textColor="#ffdbdee7"
                         android:textSize="10sp" />
                 </LinearLayout>
@@ -221,8 +197,6 @@
                     android:textColor="#ffced1da"
                     android:textSize="10sp" />
             </LinearLayout>
-
-            <include layout="@layout/recruit_item" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -292,57 +266,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="舞蹈老师"
-                        android:textColor="#ffced1da"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Dance Instructor"
-                        android:textColor="#ffced1da"
-                        android:textSize="10sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/danceTeacherTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="15dp"
-                    android:drawableEnd="@drawable/icon_right_arrow"
-                    android:drawablePadding="8dp"
-                    android:text="更多"
-                    android:textColor="#ffe4e4e4"
-                    android:textSize="11sp" />
-            </RelativeLayout>
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/teacher_recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                tools:itemCount="3"
-                tools:listitem="@layout/teacher_item" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="机构视频"
+                        android:text="老师视频"
                         android:textColor="#ffced1da"
                         android:textSize="16sp" />
 
@@ -381,7 +305,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
-
 </LinearLayout>

@@ -28,8 +28,15 @@
         <activity android:name=".ui.aty.home.VideoAty" />
         <activity android:name=".ui.aty.home.VideoDetailsAty" />
         <activity android:name=".ui.aty.home.CourseDetailsAty" />
-        <activity android:name=".ui.aty.home.DanceOrgDetailsAty" />
+        <activity android:name=".ui.aty.home.DanceOrgDetailsAty"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ui.aty.home.MechanismVideoAty" />
+        <activity android:name=".ui.aty.home.TeacherDetailsAty"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.aty.home.TeacherVideoAty" />
+        <activity android:name=".ui.aty.home.TeacherCourseAty" />
     </application>
 
 </manifest>

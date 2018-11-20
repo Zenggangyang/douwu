@@ -4,16 +4,14 @@ import android.graphics.Rect;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dazhukeji.douwu.R;
 import com.dazhukeji.douwu.adapter.CourseAdapter;
-import com.dazhukeji.douwu.adapter.TeacherAdapter;
 import com.dazhukeji.douwu.adapter.VideoAdpater;
 import com.dazhukeji.douwu.base.BaseAty;
 import com.dazhukeji.douwu.manager.RecyclerViewManager;
+import com.dazhukeji.douwu.view.RatingBar;
 import com.zhangyunfei.mylibrary.utils.DisplayHelper;
 import com.zhangyunfei.mylibrary.utils.GlideApp;
 
@@ -27,39 +25,36 @@ import cn.jzvd.JzvdStd;
 
 /**
  * 创建者：zhangyunfei
- * 创建时间：2018/11/20 10:28
- * 功能描述：机构详情
+ * 时间：2018/11/20 0020
+ * 联系方式：32457127@qq.com
  */
-public class DanceOrgDetailsAty extends BaseAty {
-    @BindView(R.id.back_img)
-    ImageView backImg;
+public class TeacherDetailsAty extends BaseAty {
     @BindView(R.id.txt_title)
     TextView txtTitle;
-    @BindView(R.id.info_frameLayout)
-    FrameLayout infoFrameLayout;
+    @BindView(R.id.ratingBar)
+    RatingBar ratingBar;
+    @BindView(R.id.score_tv)
+    TextView scoreTv;
     @BindView(R.id.videoplayer)
     JzvdStd videoplayer;
     @BindView(R.id.course_child_recyclerView)
     RecyclerView courseChildRecyclerView;
-    @BindView(R.id.teacher_recyclerView)
-    RecyclerView teacherRecyclerView;
     @BindView(R.id.video_recyclerView)
     RecyclerView videoRecyclerView;
+
     private RecyclerViewManager mRecyclerViewManager;
     private List<Object> mList = new ArrayList<>();
+
     private CourseAdapter.ChildCourseAdapter mChildCourseAdapter;
     private VideoAdpater mVideoAdpater;
-
     @Override
     public int getLayoutId() {
-        return R.layout.activity_danceorg_details;
+        return R.layout.activity_teacher_details;
     }
 
     @Override
     public void initView() {
-        txtTitle.setText("机构详情");
-        infoFrameLayout.setVisibility(View.VISIBLE);
-
+        txtTitle.setText("老师详情");
         videoplayer.setUp("http://jzvd.nathen.cn/c6e3dc12a1154626b3476d9bf3bd7266/6b56c5f0dc31428083757a45764763b0-5287d2089db37e62345123a1be272f8b.mp4"
                 , "" , Jzvd.SCREEN_WINDOW_NORMAL);
         GlideApp.with(this).load("http://jzvd-pic.nathen.cn/jzvd-pic/1bb2ebbe-140d-4e2e-abd2-9e7e564f71ac.png").into(videoplayer.thumbImageView);
@@ -83,11 +78,6 @@ public class DanceOrgDetailsAty extends BaseAty {
             }
         });
 
-        mRecyclerViewManager = new RecyclerViewManager(teacherRecyclerView);
-        teacherRecyclerView.setNestedScrollingEnabled(false);
-        mRecyclerViewManager.setLinearLayoutManager(RecyclerView.VERTICAL);
-        teacherRecyclerView.setAdapter(new TeacherAdapter(R.layout.teacher_item, mList));
-
         mRecyclerViewManager = new RecyclerViewManager(videoRecyclerView);
         videoRecyclerView.setNestedScrollingEnabled(false);
         mRecyclerViewManager.setGridLayoutManager(2);
@@ -96,23 +86,31 @@ public class DanceOrgDetailsAty extends BaseAty {
         videoRecyclerView.setAdapter(mVideoAdpater);
 
     }
-
+    @Override
+    public void onBackPressed() {
+        if (Jzvd.backPress()) {
+            return;
+        }
+        super.onBackPressed();
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Jzvd.releaseAllVideos();
+    }
     @Override
     public void initData() {
 
     }
 
-    @OnClick({R.id.see_tv, R.id.courseTv, R.id.danceTeacherTv, R.id.mechanismVideoTv})
+    @OnClick({R.id.courseTv, R.id.mechanismVideoTv})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.see_tv:
-                break;
             case R.id.courseTv:
-                break;
-            case R.id.danceTeacherTv:
+                startActivity(TeacherCourseAty.class);
                 break;
             case R.id.mechanismVideoTv:
-                startActivity(MechanismVideoAty.class);
+                startActivity(TeacherVideoAty.class);
                 break;
         }
     }

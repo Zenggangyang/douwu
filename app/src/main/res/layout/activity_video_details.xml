@@ -15,12 +15,10 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
+            <cn.jzvd.JzvdStd
+                android:id="@+id/videoplayer"
                 android:layout_width="match_parent"
-                android:layout_height="211dp"
-                android:gravity="center"
-                android:text="播放视频"
-                android:textColor="@color/white" />
+                android:layout_height="211dp"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"

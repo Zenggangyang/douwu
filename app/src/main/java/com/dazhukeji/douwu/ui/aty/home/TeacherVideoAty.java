@@ -2,7 +2,6 @@ package com.dazhukeji.douwu.ui.aty.home;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -18,12 +17,10 @@ import butterknife.BindView;
 
 /**
  * 创建者：zhangyunfei
- * 创建时间：2018/11/20 15:24
- * 功能描述：机构视频
+ * 时间：2018/11/20 0020
+ * 联系方式：32457127@qq.com
  */
-public class MechanismVideoAty extends BaseAty {
-    @BindView(R.id.back_img)
-    ImageView backImg;
+public class TeacherVideoAty extends BaseAty{
     @BindView(R.id.txt_title)
     TextView txtTitle;
     @BindView(R.id.video_recyclerView)
@@ -31,15 +28,14 @@ public class MechanismVideoAty extends BaseAty {
     private RecyclerViewManager mRecyclerViewManager;
     private List<Object> mList;
     private VideoAdpater mVideoAdpater;
-
     @Override
     public int getLayoutId() {
-        return R.layout.activity_mechanism_video;
+        return R.layout.activity_teacher_video;
     }
 
     @Override
     public void initView() {
-        txtTitle.setText("机构视频");
+        txtTitle.setText("老师视频");
         mRecyclerViewManager = new RecyclerViewManager(videoRecyclerView);
         mRecyclerViewManager.setGridLayoutManager(2);
         videoRecyclerView.setNestedScrollingEnabled(false);
@@ -61,5 +57,4 @@ public class MechanismVideoAty extends BaseAty {
     public void initData() {
 
     }
-
 }
