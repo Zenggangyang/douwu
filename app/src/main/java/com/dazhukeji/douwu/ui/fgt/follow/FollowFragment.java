@@ -50,6 +50,7 @@ public class FollowFragment extends BaseFgt {
 
     @Override
     protected void initialized(View view) {
+        backImg.setVisibility(View.GONE);
         txtTitle.setText("我的关注");
         mRecyclerViewManager = new RecyclerViewManager(followRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.VERTICAL);

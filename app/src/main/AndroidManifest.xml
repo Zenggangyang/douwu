@@ -31,12 +31,13 @@
         <activity android:name=".ui.aty.home.DanceOrgDetailsAty"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ui.aty.home.MechanismVideoAty" />
+        <activity android:name=".ui.aty.home.OrganizationVideoAty" />
         <activity android:name=".ui.aty.home.TeacherDetailsAty"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.aty.home.TeacherVideoAty" />
         <activity android:name=".ui.aty.home.TeacherCourseAty" />
+        <activity android:name=".ui.aty.home.DanceOrgCourseAty" />
     </application>
 
 </manifest>

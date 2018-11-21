@@ -21,7 +21,7 @@ import butterknife.BindView;
  * 创建时间：2018/11/20 15:24
  * 功能描述：机构视频
  */
-public class MechanismVideoAty extends BaseAty {
+public class OrganizationVideoAty extends BaseAty {
     @BindView(R.id.back_img)
     ImageView backImg;
     @BindView(R.id.txt_title)

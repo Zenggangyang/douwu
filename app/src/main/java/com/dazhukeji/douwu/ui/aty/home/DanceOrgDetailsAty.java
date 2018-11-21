@@ -106,13 +106,15 @@ public class DanceOrgDetailsAty extends BaseAty {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.see_tv:
+                startActivity(RecruitDetailsAty.class);
                 break;
             case R.id.courseTv:
+                startActivity(DanceOrgCourseAty.class);
                 break;
             case R.id.danceTeacherTv:
                 break;
             case R.id.mechanismVideoTv:
-                startActivity(MechanismVideoAty.class);
+                startActivity(OrganizationVideoAty.class);
                 break;
         }
     }

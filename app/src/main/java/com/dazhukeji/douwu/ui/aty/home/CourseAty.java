@@ -49,6 +49,7 @@ public class CourseAty extends BaseAty {
     private RecyclerViewManager mRecyclerViewManager;
     private List<Object> mList = new ArrayList<>();
     private CourseAdapter mCourseAdapter;
+    private TitlesAdapter mTitlesAdapter;
 
     @Override
     public int getLayoutId() {
@@ -66,7 +67,14 @@ public class CourseAty extends BaseAty {
         }
         mRecyclerViewManager = new RecyclerViewManager(titlesRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.HORIZONTAL);
-        titlesRecyclerView.setAdapter(new TitlesAdapter(R.layout.home_title_item,titleList));
+        mTitlesAdapter = new TitlesAdapter(R.layout.home_title_item, titleList);
+        titlesRecyclerView.setAdapter(mTitlesAdapter);
+        mTitlesAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                mTitlesAdapter.setSelectPosition(position);
+            }
+        });
 
         mRecyclerViewManager = new RecyclerViewManager(courseRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.VERTICAL);

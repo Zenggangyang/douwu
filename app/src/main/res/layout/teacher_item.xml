@@ -80,10 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="        简介：nico,舞龄4年，教学经验
-    丰富。曾多次参加业内知名大师的
-  集训课，参加过HIPHOP发明团队
-Elite force."
+        android:text="简介：nico,舞龄4年，教学经验丰富。曾多次参加业内知名大师的集训课，参加过HIPHOP发明团队Elite force."
         android:textColor="#ffdbdee7"
         android:textSize="9sp"
         />
