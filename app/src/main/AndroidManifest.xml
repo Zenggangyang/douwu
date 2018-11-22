@@ -27,7 +27,9 @@
         <activity android:name=".ui.aty.home.NoticeDetailsAty" />
         <activity android:name=".ui.aty.home.VideoAty" />
         <activity android:name=".ui.aty.home.VideoDetailsAty" />
-        <activity android:name=".ui.aty.home.CourseDetailsAty" />
+        <activity android:name=".ui.aty.home.CourseDetailsAty"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ui.aty.home.DanceOrgDetailsAty"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"/>
@@ -38,6 +40,15 @@
         <activity android:name=".ui.aty.home.TeacherVideoAty" />
         <activity android:name=".ui.aty.home.TeacherCourseAty" />
         <activity android:name=".ui.aty.home.DanceOrgCourseAty" />
+        <activity android:name=".ui.aty.home.PayDialogAty"
+            android:theme="@style/PayDialog"/>
+        <activity android:name=".ui.aty.mine.EditPersonalInfoAty" />
+        <activity android:name=".ui.aty.mine.MemberCollectAty" />
+        <activity android:name=".ui.aty.mine.MemberFollowAty" />
+        <activity android:name=".ui.aty.mine.OrganizationRecruitAty" />
+        <activity android:name=".ui.aty.mine.ManageTeacherAty" />
+        <activity android:name=".ui.aty.mine.ManageCourseAty" />
+        <activity android:name=".ui.aty.mine.AddCourseAty" />
     </application>
 
 </manifest>

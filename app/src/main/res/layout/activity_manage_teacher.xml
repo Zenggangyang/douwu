@@ -8,10 +8,6 @@
 
     <include layout="@layout/layout_bars" />
 
-    <include layout="@layout/layout_titles" />
-
-    <include layout="@layout/layout_search" />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/teacher_recyclerView"
         android:layout_width="match_parent"

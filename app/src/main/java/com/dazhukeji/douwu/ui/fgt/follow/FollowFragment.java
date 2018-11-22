@@ -57,7 +57,7 @@ public class FollowFragment extends BaseFgt {
         for (int i = 0; i < 5; i++) {
             mList.add(new Object());
         }
-        setSelect(0);
+        setSelect();
     }
 
     @Override
@@ -79,21 +79,21 @@ public class FollowFragment extends BaseFgt {
                 position = 2;
                 break;
         }
-        setSelect(position);
+        setSelect();
     }
 
-    private void setSelect(int position) {
+    private void setSelect() {
         teacherTv.setBackground(null);
         mechanismTv.setBackground(null);
         courseTv.setBackground(null);
         if (0 == position) {
-            teacherTv.setBackgroundResource(R.drawable.ic_arrow_back);
+            teacherTv.setBackgroundResource(R.drawable.icon_title_bg);
             followRecyclerView.setAdapter(new TeacherAdapter(R.layout.teacher_item,mList));
         } else if (1 == position) {
-            mechanismTv.setBackgroundResource(R.drawable.ic_arrow_back);
+            mechanismTv.setBackgroundResource(R.drawable.icon_title_bg);
             followRecyclerView.setAdapter(new CourseAdapter(R.layout.course_item,mList));
         } else if (2 == position) {
-            courseTv.setBackgroundResource(R.drawable.ic_arrow_back);
+            courseTv.setBackgroundResource(R.drawable.icon_title_bg);
             followRecyclerView.setAdapter(new DanceOrgAdapter(R.layout.danceorg_item, mList));
         }
 

@@ -46,7 +46,7 @@ public class RecruitDetailsAty extends BaseAty{
     public void initView() {
         txtTitle.setText("招聘详情");
         mRecyclerViewManager = new RecyclerViewManager(picRecyclerView);
-        mRecyclerViewManager.setLinearLayoutManager(RecyclerView.HORIZONTAL);
+        mRecyclerViewManager.setGridLayoutManager(2);
         mList.add(new Object());
         mList.add(new Object());
         mPicAdapter = new PicAdapter(R.layout.pic_item, mList);

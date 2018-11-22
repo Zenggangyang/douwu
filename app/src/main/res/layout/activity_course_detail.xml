@@ -200,16 +200,17 @@
                     android:background="@drawable/icon_course_details_line" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="25dp"
                     android:layout_marginStart="25dp"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
+                    <cn.jzvd.JzvdStd
+                        android:id="@+id/videoplayer"
+                        android:layout_width="match_parent"
                         android:layout_height="151dp"
-                        android:src="@drawable/icon_course_banner" />
+                        android:layout_marginTop="15dp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -241,16 +242,19 @@
                 android:layout_height="47dp">
 
                 <TextView
+                    android:id="@+id/letterTv"
                     android:drawablePadding="4dp"
                     android:drawableStart="@drawable/icon_course_details_letter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="私信Ta"
+                    android:gravity="center"
                     android:layout_marginStart="21dp"
                     android:textColor="#ffdbdee7"
                     android:textSize="10sp"
                     />
                 <TextView
+                    android:id="@+id/trySeeTv"
                     android:drawablePadding="4dp"
                     android:drawableStart="@drawable/icon_course_details_play"
                     android:layout_width="wrap_content"
@@ -259,9 +263,11 @@
                     android:layout_marginStart="17dp"
                     android:textColor="#ffdbdee7"
                     android:textSize="10sp"
+                    android:gravity="center"
                     android:layout_marginEnd="28dp"
                     />
                 <LinearLayout
+                    android:id="@+id/pay_linearLayout"
                     android:orientation="horizontal"
                     android:gravity="center"
                     android:background="@mipmap/ic_launcher"
@@ -270,7 +276,7 @@
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@drawable/icon_rmb"
                         />
                     <TextView
                         android:layout_width="wrap_content"
