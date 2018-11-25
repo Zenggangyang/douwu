@@ -42,7 +42,8 @@ public class ManageCourseAty extends BaseAty{
     public void initView() {
         txtTitle.setText("课程管理");
         editTv.setVisibility(View.VISIBLE);
-
+        mList.add(new Object());
+        mList.add(new Object());
         mRecyclerViewManager = new RecyclerViewManager(courseRecyclerView);
         mRecyclerViewManager.setLinearLayoutManager(RecyclerView.VERTICAL);
         mCourseAdapter = new CourseAdapter(R.layout.course_item, mList);

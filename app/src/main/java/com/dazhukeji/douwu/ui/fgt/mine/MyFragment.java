@@ -12,6 +12,7 @@ import com.dazhukeji.douwu.ui.aty.mine.ManageCourseAty;
 import com.dazhukeji.douwu.ui.aty.mine.ManageTeacherAty;
 import com.dazhukeji.douwu.ui.aty.mine.MemberCollectAty;
 import com.dazhukeji.douwu.ui.aty.mine.MemberFollowAty;
+import com.dazhukeji.douwu.ui.aty.mine.MemberVideoAty;
 import com.dazhukeji.douwu.ui.aty.mine.OrganizationRecruitAty;
 
 import butterknife.BindView;
@@ -75,6 +76,7 @@ public class MyFragment extends BaseFgt {
             case R.id.memberVoucherLinearLayout:
                 break;
             case R.id.memberVideoLinearLayout:
+                startActivity(MemberVideoAty.class);
                 break;
             case R.id.memberFollowLinearLayout:
                 startActivity(MemberFollowAty.class);
