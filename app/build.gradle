@@ -10,6 +10,17 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs{
+        releaseConfig{
+            keyAlias 'key0'
+            keyPassword '20181114'
+            storeFile file('../douwu.jks')
+            storePassword '20181114'
+            v2SigningEnabled false
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
