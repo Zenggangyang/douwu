@@ -15,6 +15,8 @@ import com.dazhukeji.douwu.ui.aty.mine.MemberFollowAty;
 import com.dazhukeji.douwu.ui.aty.mine.MemberFreeEnterAty;
 import com.dazhukeji.douwu.ui.aty.mine.MemberVideoAty;
 import com.dazhukeji.douwu.ui.aty.mine.OrganizationRecruitAty;
+import com.dazhukeji.douwu.ui.aty.mine.PurchasedCoursesAty;
+import com.dazhukeji.douwu.ui.aty.mine.VoucherAty;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -69,6 +71,7 @@ public class MyFragment extends BaseFgt {
                 startActivity(MemberCollectAty.class);
                 break;
             case R.id.memberCourseLinearLayout:
+                startActivity(PurchasedCoursesAty.class);
                 break;
             case R.id.memberChatLinearLayout:
                 break;
@@ -76,6 +79,7 @@ public class MyFragment extends BaseFgt {
                 startActivity(MemberFreeEnterAty.class);
                 break;
             case R.id.memberVoucherLinearLayout:
+                startActivity(VoucherAty.class);
                 break;
             case R.id.memberVideoLinearLayout:
                 startActivity(MemberVideoAty.class);

@@ -11,7 +11,7 @@
         android:layout_width="57dp"
         android:layout_height="57dp"
         android:layout_centerVertical="true"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/icon_video_head_placeholder" />
 
     <LinearLayout
         android:id="@+id/info_layout"

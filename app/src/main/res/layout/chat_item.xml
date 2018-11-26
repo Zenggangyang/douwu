@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="33dp"
             android:layout_height="33dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/icon_video_head_placeholder" />
 
         <LinearLayout
             android:layout_width="wrap_content"

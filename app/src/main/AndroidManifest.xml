@@ -54,6 +54,9 @@
             android:theme="@style/PayDialog"/>
         <activity android:name=".ui.aty.mine.BeComeTeacherAty" />
         <activity android:name=".ui.aty.mine.BeComeOrgAty" />
+        <activity android:name=".ui.aty.mine.PurchasedCoursesAty" />
+        <activity android:name=".ui.aty.mine.PurchasedCoursesDetailsAty" />
+        <activity android:name=".ui.aty.mine.VoucherAty" />
     </application>
 
 </manifest>
