@@ -105,9 +105,9 @@ public class CityListAdapter extends RecyclerView.Adapter<CityListAdapter.BaseVi
             case VIEW_TYPE_CURRENT:
                 view = LayoutInflater.from(mContext).inflate(R.layout.cp_list_item_location_layout, parent, false);
                 return new LocationViewHolder(view);
-            case VIEW_TYPE_HOT:
-                view = LayoutInflater.from(mContext).inflate(R.layout.cp_list_item_hot_layout, parent, false);
-                return new HotViewHolder(view);
+//            case VIEW_TYPE_HOT:
+//                view = LayoutInflater.from(mContext).inflate(R.layout.cp_list_item_hot_layout, parent, false);
+//                return new HotViewHolder(view);
             default:
                 view = LayoutInflater.from(mContext).inflate(R.layout.cp_list_item_default_layout, parent, false);
                 return new DefaultViewHolder(view);
@@ -198,8 +198,8 @@ public class CityListAdapter extends RecyclerView.Adapter<CityListAdapter.BaseVi
     public int getItemViewType(int position) {
         if (position == 0 && TextUtils.equals("定", mData.get(position).getSection().substring(0, 1)))
             return VIEW_TYPE_CURRENT;
-        if (position == 1 && TextUtils.equals("热", mData.get(position).getSection().substring(0, 1)))
-            return VIEW_TYPE_HOT;
+//        if (position == 1 && TextUtils.equals("热", mData.get(position).getSection().substring(0, 1)))
+//            return VIEW_TYPE_HOT;
         return super.getItemViewType(position);
     }
 

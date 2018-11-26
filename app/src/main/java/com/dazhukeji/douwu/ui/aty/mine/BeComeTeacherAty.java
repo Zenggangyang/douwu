@@ -17,12 +17,12 @@ public class BeComeTeacherAty extends BaseAty{
     TextView txtTitle;
     @Override
     public int getLayoutId() {
-        return 0;
+        return R.layout.activity_become_teacher;
     }
 
     @Override
     public void initView() {
-        txtTitle.setText("课程列表");
+        txtTitle.setText("填写信息");
 
     }
 
