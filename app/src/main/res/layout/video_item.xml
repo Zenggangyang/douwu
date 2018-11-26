@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="14dp">
 
     <FrameLayout
         android:layout_gravity="center_horizontal"
@@ -10,7 +11,7 @@
         <ImageView
             android:layout_width="181dp"
             android:layout_height="253dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/icon_video_placeholder" />
         <ImageView
             android:src="@mipmap/ic_launcher"
             android:layout_gravity="right|bottom"
@@ -33,7 +34,7 @@
             android:id="@+id/head_img"
             android:layout_width="33dp"
             android:layout_height="33dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/icon_video_head_placeholder" />
 
         <TextView
             android:id="@+id/name_tv"
@@ -51,9 +52,17 @@
             android:id="@+id/num_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/head_img"
+            android:layout_alignTop="@id/name_tv"
+            android:layout_marginTop="3dp"
             android:layout_marginStart="32dp"
+            android:drawableStart="@drawable/icon_video_love"
             android:layout_toRightOf="@id/name_tv"
+            android:paddingStart="6dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingEnd="6dp"
+            android:drawablePadding="3dp"
+            android:background="@drawable/shape_video_love_num"
             android:text="11864"
             android:textColor="#ffeaeaea"
             android:textSize="10sp" />

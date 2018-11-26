@@ -32,6 +32,8 @@ public class EditPersonalInfoAty extends BaseAty {
     @BindView(R.id.confirm_revision_tv)
     TextView confirmRevisionTv;
 
+    private String sex = "boy";
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_personal_info;
@@ -47,13 +49,31 @@ public class EditPersonalInfoAty extends BaseAty {
 
     }
 
-    @OnClick({R.id.head_img, R.id.confirm_revision_tv})
+    @OnClick({R.id.head_img, R.id.boy_tv, R.id.girl_tv, R.id.confirm_revision_tv})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.head_img:
                 break;
+            case R.id.boy_tv:
+                sex = "boy";
+                setSex();
+                break;
+            case R.id.girl_tv:
+                sex = "girl";
+                setSex();
+                break;
             case R.id.confirm_revision_tv:
                 break;
+        }
+    }
+
+    private void setSex() {
+        boyTv.setBackgroundResource(R.drawable.icon_sex_unselect_bg);
+        girlTv.setBackgroundResource(R.drawable.icon_sex_unselect_bg);
+        if ("boy".equals(sex)) {
+            boyTv.setBackgroundResource(R.drawable.icon_sex_select_bg);
+        } else {
+            girlTv.setBackgroundResource(R.drawable.icon_sex_select_bg);
         }
     }
 }

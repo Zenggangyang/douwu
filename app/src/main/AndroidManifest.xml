@@ -50,6 +50,10 @@
         <activity android:name=".ui.aty.mine.ManageCourseAty" />
         <activity android:name=".ui.aty.mine.AddCourseAty" />
         <activity android:name=".ui.aty.mine.MemberVideoAty" />
+        <activity android:name=".ui.aty.mine.MemberFreeEnterAty"
+            android:theme="@style/PayDialog"/>
+        <activity android:name=".ui.aty.mine.BeComeTeacherAty" />
+        <activity android:name=".ui.aty.mine.BeComeOrgAty" />
     </application>
 
 </manifest>

@@ -12,6 +12,7 @@ import com.dazhukeji.douwu.ui.aty.mine.ManageCourseAty;
 import com.dazhukeji.douwu.ui.aty.mine.ManageTeacherAty;
 import com.dazhukeji.douwu.ui.aty.mine.MemberCollectAty;
 import com.dazhukeji.douwu.ui.aty.mine.MemberFollowAty;
+import com.dazhukeji.douwu.ui.aty.mine.MemberFreeEnterAty;
 import com.dazhukeji.douwu.ui.aty.mine.MemberVideoAty;
 import com.dazhukeji.douwu.ui.aty.mine.OrganizationRecruitAty;
 
@@ -72,6 +73,7 @@ public class MyFragment extends BaseFgt {
             case R.id.memberChatLinearLayout:
                 break;
             case R.id.memberFreeEnterLinearLayout:
+                startActivity(MemberFreeEnterAty.class);
                 break;
             case R.id.memberVoucherLinearLayout:
                 break;

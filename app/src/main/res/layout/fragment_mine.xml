@@ -34,7 +34,7 @@
                         android:id="@+id/head_img"
                         android:layout_width="67dp"
                         android:layout_height="67dp"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/icon_video_head_placeholder" />
 
                     <ImageView
                         android:id="@+id/logo_img"
