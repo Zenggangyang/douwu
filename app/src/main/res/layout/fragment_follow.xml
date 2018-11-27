@@ -26,7 +26,7 @@
             android:paddingTop="2dp"
             android:text="老师"
             android:textColor="#fffefefe"
-            android:textSize="10sp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/mechanism_tv"
@@ -39,7 +39,7 @@
             android:paddingTop="2dp"
             android:text="机构"
             android:textColor="#fffefefe"
-            android:textSize="10sp" />
+            android:textSize="12sp" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
