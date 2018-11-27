@@ -83,6 +83,7 @@
             android:id="@+id/brief_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:lineSpacingExtra="3dp"
             android:layout_marginStart="32dp"
             android:layout_gravity="center_vertical"
             android:text="简介：nico,舞龄4年，教学经验丰富。曾多次参加业内知名大师的集训课，参加过HIPHOP发明团队Elite force."
