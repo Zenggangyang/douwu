@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.dazhukeji.douwu.R;
 import com.dazhukeji.douwu.base.BaseFgt;
 import com.dazhukeji.douwu.ui.aty.mine.EditPersonalInfoAty;
+import com.dazhukeji.douwu.ui.aty.mine.FansAty;
 import com.dazhukeji.douwu.ui.aty.mine.ManageCourseAty;
 import com.dazhukeji.douwu.ui.aty.mine.ManageTeacherAty;
 import com.dazhukeji.douwu.ui.aty.mine.MemberCollectAty;
@@ -98,6 +99,7 @@ public class MyFragment extends BaseFgt {
             case R.id.organizationSendVideoLinearLayout:
                 break;
             case R.id.organizationFansLinearLayout:
+                startActivity(FansAty.class);
                 break;
             case R.id.organizationInfoLinearLayout:
                 break;
@@ -113,6 +115,7 @@ public class MyFragment extends BaseFgt {
                 startActivity(ManageTeacherAty.class);
                 break;
             case R.id.teacherFansLinearLayout:
+                startActivity(FansAty.class);
                 break;
             case R.id.teacherInfoLinearLayout:
                 break;

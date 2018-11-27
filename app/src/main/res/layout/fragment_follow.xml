@@ -40,19 +40,6 @@
             android:text="机构"
             android:textColor="#fffefefe"
             android:textSize="10sp" />
-
-        <TextView
-            android:id="@+id/course_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:paddingBottom="4dp"
-            android:paddingEnd="11dp"
-            android:paddingStart="12dp"
-            android:paddingTop="2dp"
-            android:text="课程"
-            android:textColor="#fffefefe"
-            android:textSize="10sp" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView

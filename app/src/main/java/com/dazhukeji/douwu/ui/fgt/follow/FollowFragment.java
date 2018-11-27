@@ -7,7 +7,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dazhukeji.douwu.R;
-import com.dazhukeji.douwu.adapter.CourseAdapter;
 import com.dazhukeji.douwu.adapter.DanceOrgAdapter;
 import com.dazhukeji.douwu.adapter.TeacherAdapter;
 import com.dazhukeji.douwu.base.BaseFgt;
@@ -35,8 +34,6 @@ public class FollowFragment extends BaseFgt {
     TextView teacherTv;
     @BindView(R.id.mechanism_tv)
     TextView mechanismTv;
-    @BindView(R.id.course_tv)
-    TextView courseTv;
     @BindView(R.id.follow_recyclerView)
     RecyclerView followRecyclerView;
     private RecyclerViewManager mRecyclerViewManager;
@@ -66,7 +63,7 @@ public class FollowFragment extends BaseFgt {
     }
 
 
-    @OnClick({R.id.teacher_tv, R.id.mechanism_tv, R.id.course_tv})
+    @OnClick({R.id.teacher_tv, R.id.mechanism_tv})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.teacher_tv:
@@ -75,9 +72,6 @@ public class FollowFragment extends BaseFgt {
             case R.id.mechanism_tv:
                 position = 1;
                 break;
-            case R.id.course_tv:
-                position = 2;
-                break;
         }
         setSelect();
     }
@@ -85,15 +79,11 @@ public class FollowFragment extends BaseFgt {
     private void setSelect() {
         teacherTv.setBackground(null);
         mechanismTv.setBackground(null);
-        courseTv.setBackground(null);
         if (0 == position) {
             teacherTv.setBackgroundResource(R.drawable.icon_title_bg);
             followRecyclerView.setAdapter(new TeacherAdapter(R.layout.teacher_item,mList));
         } else if (1 == position) {
             mechanismTv.setBackgroundResource(R.drawable.icon_title_bg);
-            followRecyclerView.setAdapter(new CourseAdapter(R.layout.course_item,mList));
-        } else if (2 == position) {
-            courseTv.setBackgroundResource(R.drawable.icon_title_bg);
             followRecyclerView.setAdapter(new DanceOrgAdapter(R.layout.danceorg_item, mList));
         }
 

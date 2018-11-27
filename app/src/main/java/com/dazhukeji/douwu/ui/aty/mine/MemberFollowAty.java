@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.dazhukeji.douwu.R;
-import com.dazhukeji.douwu.adapter.CourseAdapter;
+import com.dazhukeji.douwu.adapter.DanceOrgAdapter;
 import com.dazhukeji.douwu.adapter.TeacherAdapter;
 import com.dazhukeji.douwu.base.BaseAty;
 import com.dazhukeji.douwu.manager.RecyclerViewManager;
@@ -77,7 +77,7 @@ public class MemberFollowAty extends BaseAty {
             followRecyclerView.setAdapter(new TeacherAdapter(R.layout.teacher_item, mList));
         } else if (1 == position) {
             followOrganizationTv.setBackgroundResource(R.drawable.icon_title_bg);
-            followRecyclerView.setAdapter(new CourseAdapter(R.layout.course_item, mList));
+            followRecyclerView.setAdapter(new DanceOrgAdapter(R.layout.danceorg_item, mList));
         }
 
     }
